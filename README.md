@@ -11,7 +11,7 @@ https://github.com/kubernetes/kops/issues/5706
 
 ```
 # vim /etc/sysconfig/kubelet 
---authentication-token-webhook=true  --authorization-mode=Webhook```
+--authentication-token-webhook=true  --authorization-mode=Webhook
 
 # systemctl restart kubelet
 ```
