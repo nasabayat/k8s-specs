@@ -1,4 +1,4 @@
-#metrics-srver
+# metrics-srver
 ``` bash
 cd cluster
 kubectl apply -f metrics-server.yaml
