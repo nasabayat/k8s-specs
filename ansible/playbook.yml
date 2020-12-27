@@ -1,0 +1,20 @@
+- hosts: aws
+  connection: ssh
+  become: yes
+  become_method: sudo
+  serial: 3
+
+  tasks:
+  - name: copy kubelet config file
+    copy:
+      src: ../files/kubelet
+      dest: /etc/sysconfig/kubelet
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: restart kubelet
+    systemd:
+      state: restarted
+      daemon_reload: yes
+      name: kubelet
