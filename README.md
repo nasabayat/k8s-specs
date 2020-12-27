@@ -18,3 +18,9 @@ https://github.com/kubernetes/kops/issues/5706
 ```nashorn js
 $ kubectl top node 
 ```
+or change the inventory regarding your cluster IPs and then run playbook
+```nashorn js
+$ kubectl get nodes -o wide 
+$ cd ansible
+$ ansible-playbook playbook.yml -u ubuntu --key-file "~/Documents/devops23.pem"
+```
