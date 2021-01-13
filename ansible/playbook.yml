@@ -1,4 +1,4 @@
-- hosts: aws
+- hosts: kops
   connection: ssh
   become: yes
   become_method: sudo
