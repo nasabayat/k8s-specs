@@ -9,3 +9,4 @@ export BUCKET_NAME=devops23-1608787521
 export KOPS_STATE_STORE=s3://$BUCKET_NAME
 kops delete cluster --name devops23.k8s.local -y
 
+
