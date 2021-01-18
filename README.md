@@ -14,10 +14,10 @@ https://github.com/kubernetes/kops/issues/5706
 
 provide the IPs:
 ```commandline
-cd ../ansible
+cd ansible
 echo "[kops]" > inventory
 kubectl get nodes -o wide | awk '{print $7}' |sed '1d' >> inventory
-ansible-playbook playbook.yml -u ubuntu --key-file "~/Documents/devops23.pem"
+ansible-playbook playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -u admin --key-file "~/Documents/devops23.pem"
 ```
 
 ```commandline
