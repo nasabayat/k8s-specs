@@ -2,6 +2,7 @@
 # create cluster and metrics-srver
 ```commandline
 ./kops-create.sh
+kubectl apply -f metrics-server.yaml
 ```
 # delete cluster
 ```commandline
