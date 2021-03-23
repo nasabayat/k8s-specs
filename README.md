@@ -27,7 +27,7 @@ or change the inventory regarding your cluster IPs and then run playbook
 ```commandline
 kubectl get nodes -o wide 
 cd ansible
-ansible-playbook playbook.yml -u ubuntu --key-file "~/Documents/devops23.pem"
+ansible-playbook playbook.yml -u admin --key-file "~/Documents/devops23.pem" --ssh-extra-args='-o StrictHostKeyChecking=no'
 ```
 # Useful commands
 ```commandline
