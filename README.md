@@ -17,7 +17,7 @@ provide the IPs:
 cd ../ansible
 echo "[kops]" > inventory
 kubectl get nodes -o wide | awk '{print $7}' |sed '1d' >> inventory
-ansible-playbook playbook.yml -u ubuntu --key-file "~/Documents/devops23.pem"
+ansible-playbook playbook.yml -u admin --key-file "~/Documents/devops23.pem" --ssh-extra-args='-o StrictHostKeyChecking=no'
 ```
 
 ```commandline
