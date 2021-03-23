@@ -2,6 +2,7 @@ this is to test rebase from devops branch
 # create cluster and metrics-srver
 ```commandline
 ./kops-create.sh
+kubectl apply -f metrics-server.yaml
 ```
 # delete cluster
 ```commandline
@@ -17,7 +18,7 @@ provide the IPs:
 cd ansible
 echo "[kops]" > inventory
 kubectl get nodes -o wide | awk '{print $7}' |sed '1d' >> inventory
-ansible-playbook playbook.yml --ssh-common-args='-o StrictHostKeyChecking=no' -u admin --key-file "~/Documents/devops23.pem"
+ansible-playbook playbook.yml -u admin --key-file "~/Documents/devops23.pem" --ssh-extra-args='-o StrictHostKeyChecking=no'
 ```
 
 ```commandline
@@ -27,7 +28,7 @@ or change the inventory regarding your cluster IPs and then run playbook
 ```commandline
 kubectl get nodes -o wide 
 cd ansible
-ansible-playbook playbook.yml -u ubuntu --key-file "~/Documents/devops23.pem"
+ansible-playbook playbook.yml -u admin --key-file "~/Documents/devops23.pem" --ssh-extra-args='-o StrictHostKeyChecking=no'
 ```
 # Useful commands
 ```commandline
