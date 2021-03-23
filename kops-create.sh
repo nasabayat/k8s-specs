@@ -8,7 +8,3 @@ export NAME=devops23.k8s.local
 export BUCKET_NAME=devops23-1608787521
 export KOPS_STATE_STORE=s3://$BUCKET_NAME
 kops create cluster --name $NAME --master-count 3 --node-count 1 --node-size t2.small --master-size t2.small --zones $ZONES --master-zones $ZONES --ssh-public-key ~/Documents/devops23.pub --networking kubenet --kubernetes-version 1.14.8 --yes
-<<<<<<< HEAD
-
-=======
->>>>>>> 93699f154abf4de100391536246ca832893062b4
